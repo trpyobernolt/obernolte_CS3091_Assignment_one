@@ -24,23 +24,6 @@ hdul = fits.open(image_file)
 image_data = fits.getdata(image_file, ext=0)
 #print(image_data.shape)
 
-#Trimming the data file to an acceptable image dimensions and selecting random layer
-""" This was the code I used to find where data begins for larger files
-for i in range(250):
-        photo_data = image_data[0][i]
-        if not (np.isnan(photo_data).all()):
-            print(i)
-            print("Found the start")
-            break
-        Output is: 22
-        """
-""" This is code showing all slices of first layer
-for i in range (22, 577):
-    photo_data = image_data[0][i]
-    plt.figure()
-    plt.imshow(photo_data, cmap='gray')
-    plt.colorbar()"""
-
 #This code shows a slice of the first layer
 def show_slice():
     photo_data = image_data[0][0]
